@@ -1,5 +1,13 @@
 require 'random_data'
 
+19.times do
+    Question.create!(
+        title: RandomData.random_sentence,
+        body: RandomData.random_paragraph,
+        resolved: false
+    )
+end
+
 46.times do 
     Advertisement.create!(
         title: RandomData.random_sentence,
@@ -41,3 +49,4 @@ puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
 puts "#{Advertisement.count} advertisements created"
+puts "#{Question.count} questions asked"

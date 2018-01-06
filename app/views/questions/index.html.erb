@@ -1,0 +1,13 @@
+<h1>Every Question known to man <%= link_to "New", new_question_path(@question), class: "btn btn-success" %></h1>
+<% @questions.each_with_index do | question, index | %>
+    <div class="media">
+        <div class="media-body">
+            <h4 class="media-heading">
+                <%= link_to question.title, question %>
+                <% if question.resolved == true %>
+                    <i>(Resolved)</i>
+                <% end %>
+            </h4>
+        </div>
+    </div>
+<% end %>
