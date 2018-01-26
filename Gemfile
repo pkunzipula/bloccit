@@ -37,6 +37,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
   gem 'rails-controller-testing'
+  gem 'shoulda'
 end
 
 group :development do
@@ -49,4 +50,3 @@ group :development do
 end
 
 gem 'bootstrap-sass'
-
