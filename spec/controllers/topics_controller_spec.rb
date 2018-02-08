@@ -40,7 +40,7 @@ RSpec.describe TopicsController, type: :controller do
         
         it "renders the #new view" do
             get :new
-            expect(reponse).to render_template :new
+            expect(response).to render_template :new
         end
         
         it "initializes @topic" do
@@ -110,13 +110,13 @@ RSpec.describe TopicsController, type: :controller do
     
     describe "DELETE destroy" do
         it "deletes the topic" do
-            delete :destroy, { id: my_topic.id } 
+            delete :destroy, params: { id: my_topic.id } 
             count = Post.where({id: my_topic.id}).size
             expect(count).to eq 0
         end
         
         it "redirects to topics index" do
-            delete :destroy, { id: my_topic.id }
+            delete :destroy, params: { id: my_topic.id }
             expect(response).to redirect_to topics path
         end
     end
