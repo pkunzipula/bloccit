@@ -73,7 +73,7 @@ RSpec.describe TopicsController, type: :controller do
         
         it "renders the #edit view" do
             get :edit, { id: my_topic.id }
-            expent(response).to render_template :edit
+            expect(response).to render_template :edit
         end
         
         it "assigns topic to be update to @topic" do
